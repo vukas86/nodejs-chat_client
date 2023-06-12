@@ -32,8 +32,24 @@
       <div class="jumbotron">
         <h1 class="display-4">Send Message</h1>
         <br />
-        <input type="text" class="form-control" placeholder="" />
+        <input type="text" class="form-control" placeholder="Name" />
+        <br />
+        <button id="send" class="btn btn-success">Send</button>
       </div>
+      <div id="messages"></div>
     </div>
   </body>
+  <script>
+    $(() => {
+      $("#send").click(() => {
+        addMessage({ name: "Alex", message: "Hello" });
+      });
+    });
+
+    function addMessage(message) {
+      $("#messages").append(
+        `<h4> ${message.name} </h4> <p> ${message.message} </p>`
+      );
+    }
+  </script>
 </html>
